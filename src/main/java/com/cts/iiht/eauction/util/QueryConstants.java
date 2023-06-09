@@ -6,6 +6,7 @@ public class QueryConstants {
 	public static final String ADD_PRODUCT ="INSERT INTO productdb.PRODUCT (SELLER_ID,PRODUCT_NAME,SHORT_DESC,DETAILED_DESC,CATEGORY,STARTING_PRICE,BID_ENDDATE) VALUES (?,?,?,?,?,?,?)";
 	public static final String PLACE_BID ="INSERT INTO productdb.BUYER_BID(PRODUCT_ID,FIRST_NAME,LAST_NAME,ADDRESS,CITY,STATE,PIN,PHONE,EMAIL,BID_AMOUNT) VALUES (?,?,?,?,?,?,?,?,?,?)";
 	public static final String GET_PRODUCT ="select PRODUCT_NAME,SHORT_DESC,DETAILED_DESC,CATEGORY,STARTING_PRICE,BID_ENDDATE from productdb.product where product_id=?";
+	public static final String SELECT_GET_PRODUCT = "select PRODUCT_ID,PRODUCT_NAME from productdb.PRODUCT order by product_name";
 	
 	public static final String GET_BIDS= "SELECT b.product_id,b.bid_amount,b.first_name,b.email,b.phone "
 			+ "FROM productdb.seller as s join productdb.product as p "

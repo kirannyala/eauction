@@ -1,10 +1,13 @@
 package com.cts.iiht.eauction.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cts.iiht.eauction.bean.AddProductRequest;
 import com.cts.iiht.eauction.bean.BiddingRequest;
+import com.cts.iiht.eauction.bean.SelectProduct;
 import com.cts.iiht.eauction.dto.ProductBuyerBids;
 import com.cts.iiht.eauction.repo.ProductRepo;
 
@@ -36,5 +39,9 @@ public class AuctionService {
 	public String deleteProduct(int productId) {
 		int rowCreated = productRepo.deleteproduct(productId);
 		return rowCreated>=1 ? "Product Deleted" : "Product Delete failed" ;
+	}
+	
+	public List<SelectProduct> getProducts() {
+		return productRepo.getProducts();
 	}
 }

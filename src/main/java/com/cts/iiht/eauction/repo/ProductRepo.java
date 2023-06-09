@@ -11,10 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cts.iiht.eauction.bean.AddProductRequest;
 import com.cts.iiht.eauction.bean.BiddingRequest;
 import com.cts.iiht.eauction.bean.Product;
+import com.cts.iiht.eauction.bean.SelectProduct;
 import com.cts.iiht.eauction.dto.BuyerBids;
 import com.cts.iiht.eauction.dto.ProductBidsRowMapper;
 import com.cts.iiht.eauction.dto.ProductBuyerBids;
 import com.cts.iiht.eauction.dto.ProductRowMapper;
+import com.cts.iiht.eauction.dto.SelectProductRowMapper;
 import com.cts.iiht.eauction.util.QueryConstants;
 
 @Repository
@@ -67,4 +69,8 @@ public class ProductRepo {
 		return jdbcTemplte.update(QueryConstants.DELETE_PRODUCT, productid);
 	}
 	
+	public List<SelectProduct> getProducts() {
+		List<SelectProduct> products = jdbcTemplte.query(QueryConstants.SELECT_GET_PRODUCT, new SelectProductRowMapper());
+		return products;
+	}
 }

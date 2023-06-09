@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "dee1ddf4-a3f3-4103-a399-95ddbc19cbe1",
+		"name": "nyala_eauction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"seller\" : {\r\n        \"sellerId\" : \"1002\",\r\n\t \"firstName\": \"micheal\",\r\n\t \"lastName\": \"jacob\",\r\n\t \"address\": \"park road\",\r\n\t \"city\": \"jombi\",\r\n\t \"state\": \"KA\",\r\n\t \"pin\": \"78954\",\r\n\t \"phone\": \"8521456325\",\r\n\t \"email\": \"mich@gmail.com\"\r\n    },\r\n    \"product\" : {\r\n        \"productName\" : \"Universe\",\r\n        \"shortDesc\" : \"It is about Space\",\r\n        \"detailedDesc\" : \"It is all about the universe including planets, stars and milky ways\",\r\n        \"category\" : \"Astro\",\r\n        \"startingPrice\" : \"1500\",\r\n        \"bidEndDate\" : \"2023-02-15\"\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/seller/add-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"seller",
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getproducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/seller/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"seller",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showbids",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/seller/show-bids/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"seller",
+						"show-bids",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place-bid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productId\" :\"2\",\r\n\t\"firstName\" : \"rohan\",\r\n\t\"lastName\" : \"joy\",\r\n\t\"address\": \"Lake Street\",\r\n\t\"state\" : \"VA\",\r\n\t\"city\" : \"Ventur\",\r\n\t\"pin\" : \"30010\",\r\n\t\"phone\": \"7854695691\",\r\n\t\"email\" : \"roh@gmail.com\",\r\n\t\"bidAmount\" : \"2200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/api/v1/buyer/place-bid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"buyer",
+						"place-bid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
